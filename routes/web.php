@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MahasiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,10 @@ Route::get('/pegawai/{nama}/{divisi}', function ($nama,$divisi) {
     <li>Divisi : '.$divisi.'</li>
     </ol>';
 });
+
+Route::get('/nilai', function () {
+    return view('nilai');
+});
+
+Route::get('/mahasiswa',[MahasiswaController::class,'dataMahasiswa']);
+Route::get('/mahasiswa1',[MahasiswaController::class,'nilaiMahasiswa']);
